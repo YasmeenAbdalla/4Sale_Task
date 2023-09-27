@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AdPost" >
+    <test name="Validation display and Opened Next screen successful" >
+        <classes>
+            <class name="MobileTestPages.TestHome" />
+            <class name="MobileTestPages.TestLogin" />
+            <class name="MobileTestPages.TestPostAnAd" />
+        </classes>
+    </test>
+</suite>
