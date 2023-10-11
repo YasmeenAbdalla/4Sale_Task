@@ -1,24 +1,24 @@
 package MobileTestPages;
 
-import MobilePages.PageBase;
 import MobilePages.PostAnAd;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
+import mobileTestBase.MobileTestBase;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class TestPostAnAd extends MobileTestBase{
+public class TestPostAnAd extends MobileTestBase {
 
     PostAnAd postAnAd;
 
 
-    @Test(priority = 0)
+    @Test(priority = 0, description = "Check Validation Message will Appear")
     public void checkValidationMessageAppeared(){
-        postAnAd=new PostAnAd((AppiumDriver< MobileElement >)driver);
+        postAnAd=new PostAnAd(driver);
         postAnAd.clickOkButton();
         postAnAd.clickChooseCategory();
-        clickToSelectCarType();
+        scrollDownIntoText("Audi").click();
         postAnAd.clickToSelectVersionCar();
         postAnAd.clickToNext();
         assertEquals("Validation Messages of Location are not the same","Location information is mandatory",postAnAd.getValidationOfLocation());
@@ -28,9 +28,9 @@ public class TestPostAnAd extends MobileTestBase{
 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, description = "Check when enter all valid date will open next screen")
     public void checkNextScreenOpened(){
-        postAnAd=new PostAnAd((AppiumDriver< MobileElement >)driver);
+        postAnAd=new PostAnAd(driver);
         postAnAd.clickToLocation();
         postAnAd.enterPostTitle("Ad To Audi Car");
         postAnAd.enterPrice("50");

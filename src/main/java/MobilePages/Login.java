@@ -1,14 +1,11 @@
 package MobilePages;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
-import java.util.concurrent.TimeUnit;
+public class Login extends PageBase {
 
-public class Login extends PageBase{
-
-    public Login(AppiumDriver<MobileElement> driver) {
+    public Login(AppiumDriver driver) {
         super(driver);
     }
 

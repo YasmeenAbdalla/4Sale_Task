@@ -1,13 +1,12 @@
 package MobilePages;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 
 
-public class PostAnAd extends PageBase{
-    public PostAnAd(AppiumDriver<MobileElement> driver) {
+public class PostAnAd extends PageBase {
+    public PostAnAd(AppiumDriver driver) {
         super(driver);
     }
 
@@ -17,7 +16,9 @@ public class PostAnAd extends PageBase{
     private By selectAutomotive= By.xpath("//*[@text='Automotive']");
 
   private By selectCar=By.xpath("//*[@text='Cars']");
-  private By selectVersionCar=By.xpath("//*[@text='A1']");
+
+
+    private By selectVersionCar=By.xpath("//*[@text='A1']");
 
   private By nextButton= By.xpath("//*[@text='Next']");
 
@@ -49,6 +50,7 @@ public class PostAnAd extends PageBase{
         driver.findElement(chooseCategory).click();
         clickToSelectAutomotive();
         clickToSelectCar();
+
     }
 
     private void clickToSelectAutomotive(){
@@ -58,6 +60,7 @@ public class PostAnAd extends PageBase{
     private void clickToSelectCar(){
         driver.findElement(selectCar).click();
     }
+
 
     public void clickToSelectVersionCar(){
 
