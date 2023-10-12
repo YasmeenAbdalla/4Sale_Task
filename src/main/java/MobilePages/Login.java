@@ -1,6 +1,7 @@
 package MobilePages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 
@@ -20,16 +21,17 @@ public class Login extends PageBase {
         driver.findElement(phoneNumber).click();
         driver.findElement(phoneNumber).sendKeys(phone);
     }
-    public void enterPassword(String Password){
-        driver.findElement(password).sendKeys(Password);
 
+    public void enterPassword(String Password){
+        driver.findElement(password).click();
+        driver.findElement(password).sendKeys(Password);
     }
 
-
-
-    public void clickToLogin() {
+    public void clickToLogin(){
         driver.findElement(loginButton).click();
     }
+
+
 
 
 }
